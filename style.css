@@ -1,3 +1,29 @@
 body {
-    background-color: yellow;
+    min-height: 100vh;
+    background-color: lightblue;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todos {
+    background-color: white;
+    border-radius: 5%;
+    border: 1px black solid;
+}
+
+.todo-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 5%;
+}
+
+li {
+    border: 1px black solid;
+    max-width: 45%;
+}
+
+.checked {
+    text-decoration: line-through;
 }
