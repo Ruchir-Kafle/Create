@@ -31,19 +31,20 @@ function render() {
     for (task of data) {
         let priorityDisplay = ``;
         if (task.priority) {
-            priorityDisplay = ` *`
+            priorityDisplay = ` *`;
         }
+        
         
         todoList.innerHTML += `<li>
         <input type="checkbox" id="check-${counter}">
         <label for="check-${counter}">${task.todo}${priorityDisplay}</label>
         </li>`;
-
-        if (task.done) {
-            
-        }
         
-        counter += 1
+        let check = document.querySelector(`#check-${counter}`);
+        check.checked = true;
+        console.log(check);
+
+        counter += 1;
     }
 
     let todos = todoList.querySelectorAll('input[type="checkbox"]');
@@ -55,7 +56,7 @@ function render() {
 function handleCheck(evt) {
     evt.currentTarget.parentElement.querySelector("label").classList.toggle("checked");
     let id = evt.currentTarget.id.split('-');
-    data[parseInt(id)].done = true;
+    data[parseInt(id[id.length - 1])].done = true;
 }
 
 function handleAdd() {
